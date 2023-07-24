@@ -1,0 +1,14 @@
+div {
+  background-color: purple;
+  color: white;
+  padding: 0.625rem;
+}
+
+.p_tag_containner {
+  display: flex;
+}
+
+p {
+  font-size: 1.875rem;
+  font-weight: bolder;
+}
