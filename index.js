@@ -1,4 +1,4 @@
-function getWindowSize() {
+function updateWindowSize() {
   screen.innerHTML = `${window.screen.width}, ${window.screen.height}`;
   outer.innerHTML = `${window.outerWidth}, ${window.outerHeight}`;
   inner.innerHTML = `${window.innerWidth}, ${window.innerHeight}`;
@@ -9,8 +9,8 @@ const screen = document.querySelector(".screen");
 const outer = document.querySelector(".outer");
 const inner = document.querySelector(".inner");
 const client_width = document.querySelector(".client_width");
-getWindowSize();
+updateWindowSize();
 
 window.addEventListener("resize", function () {
-  getWindowSize();
+  updateWindowSize();
 });
