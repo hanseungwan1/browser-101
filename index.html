@@ -38,7 +38,7 @@
     <img src="./target.png" alt="target_img" class="target" />
     <div class="y_line"></div>
     <div class="x_line"></div>
-    <div class="num">sa</div>
+    <div class="num"></div>
     <script>
       const target_img = document.querySelector(".target");
       const target_img_width = target_img.offsetWidth;
@@ -46,18 +46,20 @@
       const x_line = document.querySelector(".x_line");
       const y_line = document.querySelector(".y_line");
       const num = document.querySelector(".num");
+
       document.addEventListener("mousemove", (e) => {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
 
-        target_img.style.left = mouseX - target_img_width / 2 + "px";
-        target_img.style.top = mouseY - target_img_height / 2 + "px";
+        target_img.style.transform = `translate(${
+          mouseX - target_img_width / 2
+        }px,${mouseY - target_img_height / 2}px)`;
 
-        x_line.style.top = mouseY + "px";
-        y_line.style.left = mouseX + "px";
-        num.style.left = mouseX + "px";
-        num.style.top = mouseY + "px";
+        num.style.transform = `translate(${mouseX}px,${mouseY}px)`;
         num.innerHTML = `(${mouseX}, ${mouseY})`;
+
+        x_line.style.transform = `translateY(${mouseY}px)`;
+        y_line.style.transform = `translateX(${mouseX}px)`;
       });
     </script>
   </body>
