@@ -5,68 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      .box {
-        background-color: beige;
-        width: 12.5rem;
-        height: 12.5rem;
-        margin: 1.25rem;
+      body {
+        background-color: black;
+        overflow: hidden;
+        margin: 0px;
+        padding: 0px;
       }
-      .target_box {
-        background-color: red;
+      .x_line {
+        position: absolute;
+        width: 100vw;
+        height: 1px;
+        background-color: white;
       }
-      .btn_box {
-        position: fixed;
-        left: 900px;
-        top: 10px;
+      .y_line {
+        position: absolute;
+        width: 1px;
+        height: 100vh;
+        background-color: white;
+      }
+      .target {
+        position: absolute;
       }
     </style>
   </head>
   <body>
-    <div class="btn_box">
-      <button class="scroll_by_btn">Scroll by 100px(y)</button>
-      <button class="scroll_to_btn">Scroll to 100px(y)</button>
-      <button class="scroll_into_btn">Scroll into special</button>
-    </div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box target_box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <img src="./target.png" alt="target_img" class="target" />
+    <div class="y_line"></div>
+    <div class="x_line"></div>
     <script>
-      const target = document.querySelector(".target_box");
-      const scroll_by = document.querySelector(".scroll_by_btn");
-      const scroll_to = document.querySelector(".scroll_to_btn");
-      const scroll_into = document.querySelector(".scroll_into_btn");
+      const target_img = document.querySelector(".target");
+      const target_img_width = target_img.offsetWidth;
+      const target_img_height = target_img.offsetHeight;
+      const x_line = document.querySelector(".x_line");
+      const y_line = document.querySelector(".y_line");
 
-      scroll_by.addEventListener("click", () => {
-        window.scrollBy({ top: 100, behavior: "smooth" });
-      });
-      scroll_to.addEventListener("click", () => {
-        window.scrollTo({ top: 100, behavior: "smooth" });
-      });
-      scroll_into.addEventListener("click", () => {
-        window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
-        console.log(target.offsetTop);
-      });
+      document.addEventListener("mousemove", (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
 
-      target.addEventListener("click", (e) => {
-        const coordinate = target.getBoundingClientRect();
-        console.log(coordinate);
-        console.log(`client: ${e.clientX}, ${e.clientY}`);
-        console.log(`page: ${e.pageX}, ${e.pageY}`);
+        target_img.style.left = mouseX - target_img_width / 2 + "px";
+        target_img.style.top = mouseY - target_img_height / 2 + "px";
+
+        x_line.style.top = mouseY + "px";
+        y_line.style.left = mouseX + "px";
       });
     </script>
   </body>
