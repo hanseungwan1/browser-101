@@ -14,9 +14,19 @@
       .target_box {
         background-color: red;
       }
+      .btn_box {
+        position: fixed;
+        left: 900px;
+        top: 10px;
+      }
     </style>
   </head>
   <body>
+    <div class="btn_box">
+      <button class="scroll_by_btn">Scroll by 100px(y)</button>
+      <button class="scroll_to_btn">Scroll to 100px(y)</button>
+      <button class="scroll_into_btn">Scroll into special</button>
+    </div>
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
@@ -31,8 +41,27 @@
     <div class="box target_box"></div>
     <div class="box"></div>
     <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
     <script>
       const target = document.querySelector(".target_box");
+      const scroll_by = document.querySelector(".scroll_by_btn");
+      const scroll_to = document.querySelector(".scroll_to_btn");
+      const scroll_into = document.querySelector(".scroll_into_btn");
+
+      scroll_by.addEventListener("click", () => {
+        window.scrollBy({ top: 100, behavior: "smooth" });
+      });
+      scroll_to.addEventListener("click", () => {
+        window.scrollTo({ top: 100, behavior: "smooth" });
+      });
+      scroll_into.addEventListener("click", () => {
+        window.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+        console.log(target.offsetTop);
+      });
+
       target.addEventListener("click", (e) => {
         const coordinate = target.getBoundingClientRect();
         console.log(coordinate);
