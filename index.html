@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-color: beige;
+        width: 12.5rem;
+        height: 12.5rem;
+        margin: 1.25rem;
+      }
+      .target_box {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box target_box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+      const target = document.querySelector(".target_box");
+      target.addEventListener("click", (e) => {
+        const coordinate = target.getBoundingClientRect();
+        console.log(coordinate);
+        console.log(`client: ${e.clientX}, ${e.clientY}`);
+        console.log(`page: ${e.pageX}, ${e.pageY}`);
+      });
+    </script>
+  </body>
+</html>
