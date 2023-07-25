@@ -3,62 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        background-color: black;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-      }
-      .x_line {
-        position: absolute;
-        width: 100vw;
-        height: 0.0625rem;
-        background-color: white;
-      }
-      .y_line {
-        position: absolute;
-        width: 0.0625rem;
-        height: 100vh;
-        background-color: white;
-      }
-      .target {
-        position: absolute;
-      }
-      .num {
-        color: white;
-        font-size: 3.125rem;
-        position: absolute;
-        margin-left: 1.875rem;
-      }
-    </style>
+    <title>find-rabbits</title>
+    <style></style>
   </head>
   <body>
-    <img src="./target.png" alt="target_img" class="target" />
-    <div class="y_line"></div>
-    <div class="x_line"></div>
-    <div class="num">sa</div>
-    <script>
-      const target_img = document.querySelector(".target");
-      const target_img_width = target_img.offsetWidth;
-      const target_img_height = target_img.offsetHeight;
-      const x_line = document.querySelector(".x_line");
-      const y_line = document.querySelector(".y_line");
-      const num = document.querySelector(".num");
-      document.addEventListener("mousemove", (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-
-        target_img.style.left = mouseX - target_img_width / 2 + "px";
-        target_img.style.top = mouseY - target_img_height / 2 + "px";
-
-        x_line.style.top = mouseY + "px";
-        y_line.style.left = mouseX + "px";
-        num.style.left = mouseX + "px";
-        num.style.top = mouseY + "px";
-        num.innerHTML = `(${mouseX}, ${mouseY})`;
-      });
-    </script>
+    <script></script>
   </body>
 </html>
