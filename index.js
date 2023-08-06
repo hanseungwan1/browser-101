@@ -55,7 +55,7 @@ function clickCarrot(e) {
 function randomCoordinate(element) {
   const top = parseInt(Math.random() * 100);
   const left = parseInt(Math.random() * 100);
-  if (top > 90) element.style.top = `70%`;
+  if (top > 81) element.style.top = `80%`;
   else element.style.top = `${top}%`;
   if (left > 90) element.style.left = `95%`;
   else element.style.left = `${left}%`;
