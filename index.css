@@ -35,7 +35,7 @@ body {
   margin: 0 auto;
   height: 50%;
 }
-.stop_box {
+.btn {
   background-color: #efd4a2;
   width: 50px;
   height: 50px;
@@ -75,8 +75,45 @@ body {
   font-weight: bolder;
 }
 
-.bug_containner {
-  /* background-color: red; */
+.main_containner {
   height: 50%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blue; */
+}
+
+.modal_containner {
+  z-index: 2;
+  position: fixed;
+  border-radius: 10px;
+  background-color: black;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.bug_containner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.result_text {
+  color: white;
+  font-size: 36px;
+}
+
+.bug_img {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.carrot_img {
+  position: absolute;
+  cursor: pointer;
 }
